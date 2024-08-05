@@ -93,11 +93,13 @@ function App(){
         }
     },[]) //  Empty dependency array means this runs once after the initial render
 
+    // function to handle the edit of created task
     const handleEdit=(index,item)=>{
         setCurrentEdit(index);
         setCurrentEditedItem(item);
     }
 
+    // function to update the title
     const handleUpdateTitle=(value)=>{
         setCurrentEditedItem((prev)=>{
             return{...prev,title:value}
@@ -105,12 +107,14 @@ function App(){
         
     }
 
+    // function to update the description
     const handleUpdateDescription=(value)=>{
         setCurrentEditedItem((prev)=>{
             return{...prev,description:value}
         })
     }
 
+    // function to update the edit in the task list
     const handleUpdateTodo=()=>{
         let newTodo=[...allTodos];
         newTodo[currentEdit]=currentEditedItem;
